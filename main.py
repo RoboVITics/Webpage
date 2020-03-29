@@ -2,13 +2,13 @@ from flask import Flask, render_template, request, redirect
 
 app=Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def defaul():
 	return render_template('index.html')
 	
-@app.route('/hack')
+@app.route('/hack', methods=['POST', 'GET'])
 def hack():
-	return render_template('timer.html')
+	return render_template('timer1.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
